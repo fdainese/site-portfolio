@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" class="wide wow-animation smoothscroll scrollTo">
+  <head>
+    <!-- Site Title-->
+ 	<title>DHL - Campanha indique 5 amigos</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="intense web design multipurpose template">
+    <meta name="date" content="Dec 26">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+
+wwq
+
+
+<!--
+	NOTES:
+	1. All tokens are represented by '$' sign in the template.
+	2. You can write your code only wherever mentioned.
+	3. All occurrences of existing tokens will be replaced by their appropriate values.
+	4. Blank lines will be removed automatically.
+	5. Remove unnecessary comments before creating your template.
+-->
+
+
+
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<!-- write your code here -->
+<style>
+  
+</style>
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="hot_site2.js?1512579828049"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("164E7F423FDC48C3911A05D857ABF042");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	var preloaderDiv = document.getElementById("_preload_div_");
+	preloaderDiv.style.display = 'none';
+	canvas.style.display = 'block';
+	exportRoot = new lib.hot_site2();
+	stage = new lib.Stage(canvas);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	function makeResponsive(isResp, respDim, isScale, scaleType) {		
+		var lastW, lastH, lastS=1;		
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib.properties.width, h = lib.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+			if(isResp) {                
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+					sRatio = lastS;                
+				}				
+				else if(!isScale) {					
+					if(iw<w || ih<h)						
+						sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==1) {					
+					sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==2) {					
+					sRatio = Math.max(xRatio, yRatio);				
+				}			
+			}			
+			canvas.width = w*pRatio*sRatio;			
+			canvas.height = h*pRatio*sRatio;
+			canvas.style.width = anim_container.style.width = dom_overlay_container.style.width = preloaderDiv.style.width = w*sRatio+'px';				
+			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = preloaderDiv.style.height = h*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;			
+			stage.scaleY = pRatio*sRatio;			
+			lastW = iw; lastH = ih; lastS = sRatio;            
+			stage.tickOnUpdate = false;            
+			stage.update();            
+			stage.tickOnUpdate = true;		
+		}
+	}
+	makeResponsive(false,'both',false,1);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<!-- write your code here -->
+</head>
+<body onload="init();" style="margin:0px;" id="main_body">
+
+<!-- INICIO Form -->
+	
+
+	<div id="form_container">
+
+	<img src="images/logo.png">
+
+		<form id="form_62184" class="appnitro"  method="post" action="">
+					<div class="form_description">
+
+			<h2>na DHL, seus envios valem presentes para você e seus amigos!</h2>
+			<p>Neste Natal, a DHL dá uma força para você presentear seus amigos mais especiais. Ao fazer um envio internacional, <strong>indique 5 amigos e ganhe na hora um lindo copo colecionável.</strong> Todos receberão um código promocional por e-mail, que valerá um <span>exclusivo headphone</span>. Para ganhar, basta apresentar o seu código no seu próximo envio internacional.</p>
+		</div>						
+			<ul > 	<li class="section_break">
+			<h3>Seus dados:</h3>
+			<p></p>
+		</li>
+			
+					
+
+		<li id="li_1" style="width: 47%; float:left; margin-right: 20px;">
+		
+		<div>
+			<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value="" placeholder="Seu Nome"/> 
+		</div>
+		</li>		
+
+		<li id="li_2" style="width: 47%; float:left;">
+		
+		<div>
+			<input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value="" placeholder="CPF" /> 
+		</div> 
+		</li>		<li id="li_3" >
+		
+		<div>
+			<input id="element_3" name="element_3" class="element text medium" type="text" maxlength="255" value="" placeholder="Seu E-mail" /> 
+		</div> 
+		</li>		<li class="section_break">
+			<h3>Indique 5 amigos ganhar um super presente:</h3>
+			<p></p>
+		</li>	
+
+		<li id="li_1" style="width: 47%; float:left; margin-right: 20px;">
+		
+			<div>
+				<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value="" placeholder="Nome de seu Amigo 01"/> 
+			</div>
+		</li>	
+
+
+		<li id="li_4" style="width: 47%; float:left;">
+		
+		<div>
+			<input id="element_4" name="element_4" class="element text medium" type="text" maxlength="255" value="" placeholder="E-mail de seu Amigo 01 " /> 
+		</div> 
+		</li>		
+
+
+		<li id="li_1" style="width: 47%; float:left; margin-right: 20px;">
+		
+			<div>
+				<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value="" placeholder="Nome de seu Amigo 02"/> 
+			</div>
+		</li>
+
+
+		<li id="li_5" style="width: 47%; float:left;">
+		
+		<div>
+			<input id="element_5" name="element_5" class="element text medium" type="text" maxlength="255" value="" placeholder="E-mail de seu Amigo 02" /> 
+		</div> 
+		</li>		
+
+		
+		<li id="li_1" style="width: 47%; float:left; margin-right: 20px;">
+		
+			<div>
+				<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value="" placeholder="Nome de seu Amigo 03"/> 
+			</div>
+		</li>
+
+
+		<li id="li_6" style="width: 47%; float:left;">
+		
+		<div>
+			<input id="element_6" name="element_6" class="element text medium" type="text" maxlength="255" value="" placeholder="E-mail de seu Amigo 03"/> 
+		</div> 
+		</li>		
+
+
+
+		<li id="li_1" style="width: 47%; float:left; margin-right: 20px;">
+		
+			<div>
+				<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value="" placeholder="Nome de seu Amigo 04"/> 
+			</div>
+		</li>
+
+		<li id="li_7" style="width: 47%; float:left;">
+		
+		<div>
+			<input id="element_7" name="element_7" class="element text medium" type="text" maxlength="255" value="" placeholder="E-mail de seu Amigo 04"/> 
+		</div> 
+		</li>		
+
+
+		<li id="li_1" style="width: 47%; float:left; margin-right: 20px;">
+		
+			<div>
+				<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value="" placeholder="Nome de seu Amigo 05"/> 
+			</div>
+		</li>
+
+		<li id="li_8" style="width: 47%; float:left;">
+		
+		<div>
+			<input id="element_8" name="element_8" class="element text medium" type="text" maxlength="255" value="" placeholder="E-mail de seu Amigo 05"/> 
+		</div> 
+		</li>		<li class="section_break" >
+		<h3>Essa é a sua primeira visita a nossa loja? </h3>
+		<p></p>
+		</li> <li id="li_11" >
+	
+		
+			<input id="element_11_1" name="element_11" class="element radio" type="radio" value="1" />
+<label class="choice" for="element_11_1">SIM</label>
+<input id="element_11_2" name="element_11" class="element radio" type="radio" value="2" />
+<label class="choice" for="element_11_2">NÃO</label>
+
+		</li>
+		
+		</li>
+			
+					<li class="buttons">
+			    <input type="hidden" name="form_id" value="62184" />
+			    
+				<input id="saveForm" class="button_text" type="submit" name="enviar" value="Enviar" />
+		</li>
+			</ul>
+		</form>	
+		<div id="footer">
+			 by <a href="http://www.happyagencia.com.br/" target="_blank">happy</a>
+		</div>
+	</div>
+
+	<div id="footer2"><small>Para participação ser efetivada é necessário indicar 5 e-mails válidos e diferentes. Procedimento e condições especiais praticados exclusivamente por lojas DHLe autorizadas. Oferta válida enquanto durarem os estoques. A DHL
+reserva o direito a suspender ou alterar a campanha a qualquer momento.</small></div>
+	
+
+<!-- FIM Form -->
+
+
+	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:100%; ">
+		<canvas id="canvas" width="100%" style="position: absolute; display: none; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:100%; height:; position: absolute; left: 0px; top: 0px; display: none;">
+		</div>
+	</div>
+    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:100%; width: 100%; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=images/_preloader.gif?1512597674734 style='vertical-align: middle; max-height: 100%'/></div>
+</body>
+</html>
